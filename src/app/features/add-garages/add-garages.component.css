@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  
+  .multi-select {
+    flex-grow: 1;
+    height: 80%;
+    margin-bottom: 20px;
+    overflow-y: auto;
+  }
+  
+  .sticky-button {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+  }
+  

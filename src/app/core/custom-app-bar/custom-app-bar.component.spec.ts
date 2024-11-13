@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MultiSelectComponent } from './multi-select.component';
+import { CustomAppBarComponent } from './custom-app-bar.component';
 
-describe('MultiSelectComponent', () => {
-  let component: MultiSelectComponent;
-  let fixture: ComponentFixture<MultiSelectComponent>;
+describe('CustomAppBarComponent', () => {
+  let component: CustomAppBarComponent;
+  let fixture: ComponentFixture<CustomAppBarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MultiSelectComponent]
+      imports: [CustomAppBarComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MultiSelectComponent);
+    fixture = TestBed.createComponent(CustomAppBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

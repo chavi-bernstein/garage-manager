@@ -1,0 +1,12 @@
+.sticky-toolbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(45deg, #2196F3, #9C27B0);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+  }
