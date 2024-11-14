@@ -7,14 +7,11 @@ import { Garage } from '../models/garage';
 @Injectable({
   providedIn: 'root'
 })
+
 export class GarageService {
   constructor(private _networkService: NetworkService) { }
 
   getGarages(): Observable<Garage[]> {
-    return this._networkService.get<Garage[]>('garages', { 'limit': 50 }).pipe(
-      map(response => {
-        return response.map((garageJson: any) => Garage.fromJson(garageJson));
-      })
-    );
+    return this._networkService.get<Garage[]>('garages', { 'limit': 50 });
   }
 }

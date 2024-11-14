@@ -17,8 +17,6 @@ export class CustomHttpInterceptor implements HttpInterceptor {
     console.log('Interceptor activated for:', req.url);
 
     return next.handle(req).pipe(
-      // Sets a timeout for the request; if it exceeds 10 seconds, a timeout error is thrown.
-      timeout(10000),
       catchError((error: unknown) => {
         let errorMessage = 'Unknown error occurred';
         

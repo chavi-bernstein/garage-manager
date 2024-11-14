@@ -2,9 +2,11 @@
 
     <div class="add-garages-text">{{ addGarages }}</div>
 
-    <app-custom-multi-select [items]="garageNames" [toggleCheckboxFn]="toggleCheckboxFn"  class="multi-select">
-</app-custom-multi-select>
+    @if (garageNames$ | async; as garageNames) {
+    <app-custom-multi-select [items]="garageNames" [toggleCheckboxFn]="toggleCheckboxFn" class="multi-select">
+    </app-custom-multi-select>
+    }
 
-<app-custom-button [text]="add" (onTap)="onButtonTap()" class="sticky-button">
-</app-custom-button>
+    <app-custom-button [text]="add" (onTap)="onButtonTap()" class="sticky-button">
+    </app-custom-button>
 </div>
