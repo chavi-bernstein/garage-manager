@@ -1,6 +1,6 @@
 .gradient-button {
     background: linear-gradient(45deg, #2196F3, #9C27B0);
-    color: white;
+    color: white !important;
     font-weight: bold;
     border: none;
     padding: 10px 20px;
