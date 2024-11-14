@@ -5,7 +5,7 @@
   }
   
   
-  .multi-select {
+  .garages-list{
     flex-grow: 1;
     height: 80%;
     margin-bottom: 20px;
@@ -20,7 +20,7 @@
     text-align: center;
   }
   
-  .add-garages-text {
+  .delete-garages-text {
     font-weight: bold;  
     margin-bottom: 10px; 
   }

@@ -1,0 +1,12 @@
+.item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+mat-icon {
+    background: linear-gradient(45deg, #2196F3, #9C27B0);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 24px;
+}

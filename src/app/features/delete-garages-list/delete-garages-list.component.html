@@ -1,0 +1,16 @@
+<div class="container">
+
+    <div class="delete-garages-text">{{ deleteGarages }}</div>
+
+    @if (garageNames$ | async; as garageNames) {
+        <div class="garages-list"> 
+        @for (garage of garageNames; track garage) {
+            <app-delete-garage [text]="garage"></app-delete-garage>
+        }
+    </div>
+
+    }
+
+    <app-custom-button [text]="delete" (onTap)="onButtonTap()" class="sticky-button">
+    </app-custom-button>
+</div>

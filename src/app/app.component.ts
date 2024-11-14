@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AddGaragesComponent } from './features/add-garages/add-garages.component';
+import { DeleteGaragesListComponent } from './features/delete-garages-list/delete-garages-list.component';
 import { CustomButtonComponent } from './core/custom-button/custom-button.component';
 import { GaragesTableComponent } from './features/garages-table/garages-table.component';
 import { CustomAppBarComponent } from './core/custom-app-bar/custom-app-bar.component';
@@ -11,7 +11,7 @@ import { loadGarages } from './store/actions';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AddGaragesComponent, CustomButtonComponent, GaragesTableComponent, CustomAppBarComponent],
+  imports: [RouterOutlet, DeleteGaragesListComponent, CustomButtonComponent, GaragesTableComponent, CustomAppBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

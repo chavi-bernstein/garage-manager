@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddGaragesComponent } from './add-garages.component';
+import { DeleteGarageComponent } from './delete-garage.component';
 
-describe('AddGaragesComponent', () => {
-  let component: AddGaragesComponent;
-  let fixture: ComponentFixture<AddGaragesComponent>;
+describe('DeleteItemComponent', () => {
+  let component: DeleteGarageComponent;
+  let fixture: ComponentFixture<DeleteGarageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddGaragesComponent]
+      imports: [DeleteGarageComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AddGaragesComponent);
+    fixture = TestBed.createComponent(DeleteGarageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

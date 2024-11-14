@@ -24,11 +24,10 @@ body {
    padding-left:5% ;
 }
 app-garages-table {
-  flex: 70%; 
+  flex: 75%; 
   height: 100%;
 }
 
-app-add-garages {
-  flex: 20%; 
-  height: 90%;
+app-delete-garages-list {
+  flex: 15%; 
 }
