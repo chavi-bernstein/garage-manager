@@ -29,11 +29,8 @@ mat-label {
 }
 
 .dialog-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-button {
-    width: 48%;
-}
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1%;
+    padding: 16px 0;
+  }

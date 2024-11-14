@@ -28,12 +28,4 @@ export class DeleteGaragesListComponent implements OnInit {
       this.garages$.next(garages);
     });
   }
-
-  toggleCheckboxFn(item: string, checked: boolean) {
-    console.log(item, checked);
-  }
-
-  onButtonTap() {
-    console.log("Button tapped");
-  }
 }

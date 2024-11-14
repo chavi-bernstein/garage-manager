@@ -1,0 +1,9 @@
+.send-button {
+    background: white !important;
+    color: #2196F3;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }

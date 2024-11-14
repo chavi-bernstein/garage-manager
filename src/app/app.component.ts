@@ -14,11 +14,12 @@ import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ErrorMessageComponent } from './core/error-message/error-message.component';
 import { Garage } from './models/garage';
+import { SendGaragesComponent } from './features/send-garages/send-garages.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, DeleteGaragesListComponent, CustomButtonComponent, GaragesTableComponent, CustomAppBarComponent, AddGarageButtonComponent, CommonModule, MatProgressSpinnerModule, ErrorMessageComponent],
+  imports: [RouterOutlet, DeleteGaragesListComponent, CustomButtonComponent, GaragesTableComponent, CustomAppBarComponent, AddGarageButtonComponent, CommonModule, MatProgressSpinnerModule, ErrorMessageComponent, SendGaragesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

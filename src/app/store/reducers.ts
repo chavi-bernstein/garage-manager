@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { Garage } from "../models/garage";
-import { deleteGarageSuccess, deleteGarageFailure, loadGarages, loadGaragesSuccess, loadGaragesFailure } from './actions';
+import { deleteGarageSuccess, deleteGarageFailure, loadGarages, loadGaragesSuccess, loadGaragesFailure, addGaragesSuccess, addGaragesFailure } from './actions';
 
 export interface GaragesState {
     garages: Garage[];
@@ -24,7 +24,11 @@ export const garageReducer = createReducer(
 
     on(loadGaragesFailure, (state, { error }) => ({ ...state, error, loading: false })),
 
-    on(deleteGarageSuccess, (state, { id }) => ({ ...state,  garages: state.garages.filter((garage) => garage.id !== id),  })),
+    on(deleteGarageSuccess, (state, { id }) => ({ ...state, garages: state.garages.filter((garage) => garage.id !== id), })),
 
-    on(deleteGarageFailure, (state, { error }) => ({ ...state, error }))
+    on(deleteGarageFailure, (state, { error }) => ({ ...state, error })),
+
+    on(addGaragesSuccess, (state, { garages }) => ({ ...state, garages: [...state.garages, ...garages] })),
+
+    on(addGaragesFailure, (state, { error }) => ({ ...state, error }))
 );

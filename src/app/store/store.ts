@@ -14,4 +14,4 @@ export interface AppState {
     garages: garageReducer
   }
   
-  export const appEffects = [GarageEffects];
+  export const appEffects = [GarageEffects,];

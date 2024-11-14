@@ -1,9 +1,12 @@
 <app-custom-app-bar>
-    @if(isLoading$ | async) {lllllllllllllllllll}
+    @if(isLoading$ | async) {}
     @else {
-    @if (error$ | async ; as error) {yuyuyuyuyu }
+    @if (error$ | async ; as error) { }
     @else{
-    <app-add-garage-button></app-add-garage-button>
+    <div class="button-container">
+        <app-send-garages></app-send-garages>
+        <app-add-garage-button></app-add-garage-button>
+    </div>
     }
     }
 </app-custom-app-bar>

@@ -1,26 +1,18 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    height:90%;
-  }
-  
-  
-  .garages-list{
-    flex-grow: 1;
-    height: 80%;
-    margin-bottom: 20px;
-    overflow-y: auto;
-  }
-  
-  .sticky-button {
-    position: sticky;
-    bottom: 5%;
-    width: 100%;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  .delete-garages-text {
-    font-weight: bold;  
-    margin-bottom: 10px; 
-  }
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+}
+
+
+.garages-list {
+  flex-grow: 1;
+  height: 80%;
+  margin-bottom: 20px;
+  overflow-y: auto;
+}
+
+.delete-garages-text {
+  font-weight: bold;
+  margin-bottom: 10px;
+}

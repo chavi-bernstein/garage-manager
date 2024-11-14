@@ -14,7 +14,6 @@ export class CustomHttpInterceptor implements HttpInterceptor {
    * @returns An observable that either completes successfully or throws an error if one occurs.
    */
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log('Interceptor activated for:', req.url);
 
     return next.handle(req).pipe(
       catchError((error: unknown) => {
