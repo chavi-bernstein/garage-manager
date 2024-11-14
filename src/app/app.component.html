@@ -1,11 +1,30 @@
 <app-custom-app-bar>
+    @if(isLoading$ | async) {lllllllllllllllllll}
+    @else {
+    @if (error$ | async ; as error) {yuyuyuyuyu }
+    @else{
     <app-add-garage-button></app-add-garage-button>
-  </app-custom-app-bar>
-  
-  <div class="content">
+    }
+    }
+</app-custom-app-bar>
+
+@if(isLoading$ | async){
+<div class="loading-indicator">
+    <mat-spinner></mat-spinner>
+</div>
+}
+@else {
+@if (error$ | async ; as error) {
+<app-error-message [errorMessage]="error"></app-error-message>
+}
+@else {
+@if(garages$ | async; as garages) {
+<div class="content">
     <div class="container">
-      <app-garages-table></app-garages-table>
-      <app-delete-garages-list></app-delete-garages-list>
+        <app-garages-table></app-garages-table>
+        <app-delete-garages-list></app-delete-garages-list>
     </div>
-  </div>
-  
+</div>
+}
+}
+}

@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { Garage } from "../models/garage";
-import { deleteGarage, deleteGarageSuccess, deleteGarageFailure, loadGarages, loadGaragesSuccess, loadGaragesFailure } from './actions';
+import { deleteGarageSuccess, deleteGarageFailure, loadGarages, loadGaragesSuccess, loadGaragesFailure } from './actions';
 
 export interface GaragesState {
     garages: Garage[];
@@ -10,7 +10,7 @@ export interface GaragesState {
 
 export const initialState: GaragesState = {
     garages: [],
-    loading: false,
+    loading: true,
     error: ''
 };
 
