@@ -1,9 +1,9 @@
 export class Garage {
   id: number;
-  garageNumber: number;
-  garageName: string;
-  garageTypeCode?: number;
-  garageType?: string;
+  number: number;
+  name: string;
+  typeCode?: number;
+  type?: string;
   address?: string;
   settlement?: string;
   phone?: string;
@@ -34,10 +34,10 @@ export class Garage {
       throw new Error("id, garageNumber, and garageName cannot be null or undefined");
     }
     this.id = id;
-    this.garageNumber = garageNumber;
-    this.garageName = garageName;
-    this.garageTypeCode = garageTypeCode;
-    this.garageType = garageType;
+    this.number = garageNumber;
+    this.name = garageName;
+    this.typeCode = garageTypeCode;
+    this.type = garageType;
     this.address = address;
     this.settlement = settlement;
     this.phone = phone;

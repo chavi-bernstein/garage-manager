@@ -1,3 +1,19 @@
 table {
     width: 80%;
+    direction: rtl !important;
+    text-align: right;
+    justify-content: flex-start;
+
   }
+  th, td {
+    text-align: right; 
+  }
+
+  th {
+    font-weight: bold; 
+  }
+  
+  mat-paginator{
+    direction: ltr;
+  }
+  

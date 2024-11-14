@@ -9,5 +9,5 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   styleUrl: './custom-app-bar.component.css'
 })
 export class CustomAppBarComponent {
-  title: string = "Garages";
+  title: string = "מוסכים";
 }

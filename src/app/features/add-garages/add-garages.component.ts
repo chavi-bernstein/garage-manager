@@ -12,16 +12,17 @@ import { CustomButtonComponent } from '../../core/custom-button/custom-button.co
   styleUrl: './add-garages.component.css'
 })
 export class AddGaragesComponent {
-  add: string = "Add";
+  add: string = "הוספה";
   garages: Garage[] = [];
   garageNames: string[] = [];
+  addGarages: string = 'הוספת מוסכים';
 
   constructor(private _garageService: GarageService) { }
 
   ngOnInit() {
     this._garageService.getGarages().subscribe((garages) => {
       this.garages = garages;
-      this.garageNames = garages.map(garage => garage.garageName); 
+      this.garageNames = garages.map(garage => garage.name); 
     });
   }
 
