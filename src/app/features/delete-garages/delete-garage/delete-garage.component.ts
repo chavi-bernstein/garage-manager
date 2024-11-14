@@ -1,33 +1,23 @@
 import { Component, Input } from '@angular/core';
-import { DeleteConfirmationDialogComponent } from '../delete-confirmation-dialog/delete-confirmation-dialog.component';
-import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import { Store } from '@ngrx/store';
+import { deleteGarage } from '../../../store/actions';
+import { Garage } from '../../../models/garage';
 
 @Component({
   selector: 'app-delete-garage',
   standalone: true,
-  imports: [DeleteConfirmationDialogComponent, MatIconModule],
+  imports: [MatIconModule],
   templateUrl: './delete-garage.component.html',
   styleUrl: './delete-garage.component.css'
 })
 
 export class DeleteGarageComponent {
-  @Input() text!: string;
+  @Input() garage!: Garage;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private _store: Store) { }
 
-  onDelete(item: string): void {
-    const dialogRef = this.dialog.open(DeleteConfirmationDialogComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        console.log("popooio");
-        this.deleteItem(item);
-      }
-    });
-  }
-
-  deleteItem(item: string): void {
-    console.log('Deleted item:', item);
+  onDelete(): void {
+    this._store.dispatch(deleteGarage({ id: this.garage.id }));
   }
 }

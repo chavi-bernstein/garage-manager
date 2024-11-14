@@ -3,6 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, mergeMap, of } from 'rxjs';
 import { GarageService } from '../services/garage-service.service';
 import { loadGarages, loadGaragesFailure, loadGaragesSuccess } from "./actions";
+import { deleteGarage, deleteGarageSuccess, deleteGarageFailure } from './actions';
 
 @Injectable()
 export class GarageEffects {
@@ -29,4 +30,16 @@ export class GarageEffects {
             )
         ),
     );
+
+    deleteGarage$ = createEffect(() =>
+        this._actions$.pipe(
+          ofType(deleteGarage),
+          mergeMap(({ id }) =>
+            this.garageService.deleteGarage(id).pipe(
+              map(() => deleteGarageSuccess({ id })),
+              catchError((error) => of(deleteGarageFailure({ error: error.message })))
+            )
+          )
+        )
+      );
 }

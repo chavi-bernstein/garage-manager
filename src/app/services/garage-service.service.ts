@@ -14,4 +14,8 @@ export class GarageService {
   getGarages(): Observable<Garage[]> {
     return this._networkService.get<Garage[]>('garages', { 'limit': 50 });
   }
+
+  deleteGarage(id: string): Observable<any> {
+    return this._networkService.delete<any>(`garages/${id}`);
+  }
 }

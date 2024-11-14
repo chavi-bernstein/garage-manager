@@ -26,6 +26,17 @@ export class NetworkService {
   post<T>(url: string, body: any, headers?: { [key: string]: string }): Observable<T> {
     let httpHeaders = new HttpHeaders(headers);
 
-    return this._httpClient.post<T>(`${this._baseUrl}${url}`, body, { headers: httpHeaders });
+    return this._httpClient.post<T>(`${this._baseUrl}${url ? '/' + url : ''}`, body, { headers: httpHeaders });
+  }
+
+  delete<T>(url: string, params?: { [key: string]: string | number }, headers?: { [key: string]: string }): Observable<T> {
+    let httpParams = new HttpParams();
+    if (params) {
+      Object.keys(params).forEach((key) => httpParams = httpParams.set(key, params[key]));
+    }
+
+    let httpHeaders = new HttpHeaders(headers);
+
+    return this._httpClient.delete<T>(`${this._baseUrl}${url ? '/' + url : ''}`, { params: httpParams, headers: httpHeaders });
   }
 }

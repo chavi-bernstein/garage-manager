@@ -1,0 +1,24 @@
+<mat-dialog-content class="add-garage-dialog">
+    <h2 mat-dialog-title class="dialog-title">הוסף מוסך חדש</h2>
+
+    <form [formGroup]="garageForm" (ngSubmit)="onSubmit()">
+        @for (key of formControlKeys; track key)
+        {<div class="form-group">
+            <mat-label>{{formFieldLabels[key]}}</mat-label>
+            545454
+            {{key}}
+            <mat-form-field>
+                <input matInput [formControlName]="key" [id]="key" [placeholder]="'הכנס ' + formFieldLabels[key]" />
+                <mat-error *ngIf="garageForm.get(key).hasError('required')">{{formFieldLabels[key]}} חובה</mat-error>
+                <mat-error *ngIf="garageForm.get(key).hasError('min')">{{formFieldLabels[key]}} לא יכול להיות קטן מ-1</mat-error>
+            </mat-form-field>
+        </div>
+        }
+
+
+        <div class="dialog-buttons">
+            <button mat-button mat-dialog-close type="button">ביטול</button>
+            <button mat-raised-button color="primary" [disabled]="!garageForm.valid">שלח</button>
+        </div>
+    </form>
+</mat-dialog-content>

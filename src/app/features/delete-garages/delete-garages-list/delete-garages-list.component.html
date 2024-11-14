@@ -2,10 +2,10 @@
 
     <div class="delete-garages-text">{{ deleteGarages }}</div>
 
-    @if (garageNames$ | async; as garageNames) {
+    @if (garages$ | async; as garage) {
         <div class="garages-list"> 
-        @for (garage of garageNames; track garage) {
-            <app-delete-garage [text]="garage"></app-delete-garage>
+        @for (garage of garage; track garage) {
+            <app-delete-garage [garage]="garage"></app-delete-garage>
         }
     </div>
 

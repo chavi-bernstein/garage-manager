@@ -1,3 +1,6 @@
 <mat-toolbar class="sticky-toolbar">
-    <span>{{title}}</span>
-  </mat-toolbar>
+  <span>{{title}}</span>
+  <div class="toolbar-actions">
+    <ng-content></ng-content>
+  </div>
+</mat-toolbar>

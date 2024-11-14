@@ -1,0 +1,39 @@
+.add-garage-dialog {
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    direction: rtl;
+}
+
+.dialog-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+mat-form-field {
+    align-items: flex-start;
+}
+
+mat-label {
+    align-items: flex-start;
+    font-weight: bold;
+}
+
+.dialog-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    width: 48%;
+}
