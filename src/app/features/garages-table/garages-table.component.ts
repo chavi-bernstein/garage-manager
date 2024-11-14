@@ -18,41 +18,48 @@ import { CommonModule } from '@angular/common';
 })
 
 export class GaragesTableComponent implements AfterViewInit, OnInit {
-  displayedColumns: string[] = ['garageNumber', 'garageName', 'address', 'phone', 'profession'];
-  columnHeaders = {
+  displayedColumns: string[] = []; 
+
+  columnHeaders: Record<string, string> = { 
     number: 'מספר מוסך',
     name: 'שם מוסך',
+    typeCode: 'קוד סוג מוסך',
+    type: 'סוג מוסך',
     address: 'כתובת',
+    settlement: 'ישוב',
     phone: 'טלפון',
+    postalCode: 'מיקוד',
+    professionCode: 'קוד מקצוע',
     profession: 'מקצוע',
+    professionManager: 'מנהל מקצוע',
+    registrationNumber: 'מספר רישום',
+    testTime: 'שעת בדיקה',
   };
 
   garages$: BehaviorSubject<Garage[]> = new BehaviorSubject<Garage[]>([]);
-
   dataSource = new MatTableDataSource<Garage>();
   itemsPerPage: number = 7;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-
-
-  constructor(private _store: Store<AppState>) { }
+  constructor(private _store: Store<AppState>) {}
 
   ngOnInit() {
+    this.displayedColumns = Object.keys(this.columnHeaders); // הצגת כל המפתחות ב-displayedColumns
     this._store.select(selectAllGarages).subscribe((garages) => {
       this.garages$.next(garages);
     });
   }
 
-
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
-
-    this.garages$?.subscribe(garages => {
+    this.garages$.subscribe(garages => {
       this.dataSource.data = garages;
     });
   }
 }
+
+
 
 
 
