@@ -29,7 +29,7 @@ export class GarageFormComponent {
   send: string = "שליחה";
   save: string = "שמור";
   addNewGarage: string = "הוסף מוסך חדש";
-  isSaving = false;
+  isProcessing  = false;
 
   constructor(
     public dialogRef: MatDialogRef<GarageFormComponent>,
@@ -98,12 +98,16 @@ export class GarageFormComponent {
   }
 
   onSave(): void {
+    if (this.isProcessing) {
+      return;
+    }
+
     if (this.garageForm.valid) {
       const newGarage: Garage = {
         ...this.garageForm.value,
       };
 
-      this.isSaving = true;
+      this.isProcessing = true;
       this._garageCacheService.addGarage(newGarage);
 
       this.dialogRef.close(newGarage);
@@ -113,8 +117,7 @@ export class GarageFormComponent {
   }
 
   onSubmit(): void {
-    if (this.isSaving) {
-      this.isSaving = false;
+    if (this.isProcessing) {
       return;
     }
 
@@ -122,6 +125,7 @@ export class GarageFormComponent {
       const newGarage: Garage = {
         ...this.garageForm.value,
       };
+      this.isProcessing = true;
 
       this._store.dispatch(addGarages({ garages: [newGarage] }));
 

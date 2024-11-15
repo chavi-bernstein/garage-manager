@@ -32,6 +32,11 @@ export class GarageEffects {
     ),
   );
 
+   /**
+   * Effect that handles deleting a garage.
+   * Listens for the 'deleteGarage' action, triggers a service call to delete the garage, 
+   * and dispatches a success or failure action based on the response.
+   */
   deleteGarage$ = createEffect(() =>
     this._actions$.pipe(
       ofType(deleteGarage),
@@ -44,6 +49,13 @@ export class GarageEffects {
     )
   );
 
+   /**
+   * Effect that handles adding garages.
+   * Listens for the 'addGarages' action, triggers a service call to add garages, 
+   * and dispatches a success or failure action based on the response.
+   * 
+   * @throws Throws an error if the data returned is invalid or no new garages were added.
+   */
   addGarages$ = createEffect(() =>
     this._actions$.pipe(
       ofType(addGarages),
@@ -61,8 +73,6 @@ export class GarageEffects {
       )
     )
   );
-
-
 }
 
 // Type guard to check if an object is of type Garage
