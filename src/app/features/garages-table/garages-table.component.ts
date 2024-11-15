@@ -21,6 +21,7 @@ export class GaragesTableComponent implements AfterViewInit, OnInit {
   displayedColumns: string[] = []; 
 
   columnHeaders: Record<string, string> = { 
+    id: 'מזהה',
     number: 'מספר מוסך',
     name: 'שם מוסך',
     typeCode: 'קוד סוג מוסך',
@@ -45,7 +46,7 @@ export class GaragesTableComponent implements AfterViewInit, OnInit {
   constructor(private _store: Store<AppState>) {}
 
   ngOnInit() {
-    this.displayedColumns = Object.keys(this.columnHeaders); // הצגת כל המפתחות ב-displayedColumns
+    this.displayedColumns = Object.keys(this.columnHeaders);
     this._store.select(selectAllGarages).subscribe((garages) => {
       this.garages$.next(garages);
     });

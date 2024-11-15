@@ -18,12 +18,12 @@ export const loadGaragesFailure = createAction(
 
 export const deleteGarage = createAction(
     '[Garage] Delete Garage',
-    props<{ id: string }>()
+    props<{ id: number }>()
 );
 
 export const deleteGarageSuccess = createAction(
     '[Garage] Delete Garage Success',
-    props<{ id: string }>()
+    props<{ id: number }>()
 );
 
 export const deleteGarageFailure = createAction(

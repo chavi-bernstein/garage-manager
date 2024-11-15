@@ -43,6 +43,7 @@ export class GarageFormComponent {
 
   initFormsControls() {
     this.garageForm = this._fb.group({
+      id: [null, [Validators.required, Validators.pattern(/^\d+$/)]],
       number: [null, [Validators.required, Validators.pattern('^[0-9]+$'), Validators.min(1)]],
       name: [null, [Validators.required, Validators.minLength(2)]],
       typeCode: [null, [Validators.pattern(/^\d+$/)]],
@@ -63,6 +64,7 @@ export class GarageFormComponent {
 
   initLabels() {
     this.formFieldLabels = {
+      id: 'מזהה',
       number: 'מספר מוסך',
       name: 'שם מוסך',
       typeCode: 'סוג מוסך',

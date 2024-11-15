@@ -9,7 +9,7 @@ export const selectAllGarages = createSelector(
   (state: GaragesState) => state.garages
 );
 
-export const selectGarageById = (id: string) =>
+export const selectGarageById = (id: number) =>
   createSelector(
     selectGaragesState,
     (state: GaragesState) => state.garages.find(garage => garage.id === id) || null

@@ -19,20 +19,26 @@ export class GarageService {
     return this._networkService.get<Garage[]>('garages', { 'limit': 50 });
   }
 
-  deleteGarage(id: string): Observable<any> {
+  deleteGarage(id: number): Observable<any> {
     return this._networkService.delete<any>(`garages/${id}`);
   }
 
   createGarages(garages: Garage[]): Observable<any> {
+    console.log("garages");
+    console.log(garages);
     return this._store.select(selectAllGarages).pipe(
       first(),
       switchMap((existingGarages: Garage[]) => {
         const newGarages = garages.filter(
-          garage => !existingGarages.some(existingGarage => existingGarage.id === garage.id)
+          garage => !existingGarages.some(existingGarage => existingGarage.id == garage.id)
         );
-
+  
+        
         if (newGarages.length > 0) {
           const garagesJson = newGarages.map(garage => new GarageModel(garage).toJson());
+          console.log  ("garagesJson")
+          console.log  (garagesJson)
+
           return this._networkService.post('garages', garagesJson);
         } else {
           console.log('All garages are already in the state, nothing to send.');

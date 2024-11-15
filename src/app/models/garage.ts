@@ -1,5 +1,5 @@
 export interface Garage {
-  id: string;
+  id: number;
   number: number;
   name: string;
   typeCode?: number;
@@ -18,7 +18,7 @@ export interface Garage {
 }
 
 export class GarageModel implements Garage {
-  id: string;
+  id: number;
   number: number;
   name: string;
   typeCode?: number;
@@ -52,6 +52,7 @@ export class GarageModel implements Garage {
 
   toJson(): any {
     return {
+      _id: this.id,
       mispar_mosah: this.number,
       shem_mosah: this.name,
       cod_sug_mosah: this.typeCode || null,
