@@ -1,27 +1,35 @@
-# GarageManager
+## Garage Manager Client
+This is a garage management client project built with Angular. The system allows basic management of garage data, including viewing, adding, and deleting garages. It is designed to work with the Garage Manager Server backend, so ensure the server is running to retrieve and manage data.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
+## Main Features
+View Garages: Displays a list of all garages in the system.
+Add a Garage: Allows adding a new garage to the system.
+Delete a Garage: Allows deleting an existing garage by its unique identifier.
+Note: Currently, the system does not support updating (editing) existing garage data.
 
-## Development server
+## Project Architecture
+The project is organized as follows:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+components: Contains reusable UI components, such as forms for adding and deleting garages.
+services: Manages communication with the backend server for performing CRUD operations (except update) on garage data.
+store: Handles state management using NgRx, centralizing and streamlining state changes.
+models: Defines TypeScript interfaces, ensuring strong typing and consistency for data structures.
+Technologies
+Angular: Frontend framework for building dynamic web applications.
+NgRx: Library for reactive state management, using Redux patterns for predictable state handling.
+TypeScript: Adds static typing to improve code quality and maintainability.
+Angular Material (if applicable): Provides a clean and responsive design with ready-to-use UI components.
 
-## Code scaffolding
+## Installation and Setup
+Clone the Project Repository
+git clone https://github.com/chavi-bernstein/garage-manager.git
+cd garage-manager
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Set up the Environment
+Make sure the backend server is running. Follow the setup instructions in the Garage Manager Server repository to start the server.
 
-## Build
+Install Dependencies
+npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Run the Project
+ng serve
