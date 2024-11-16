@@ -1,6 +1,7 @@
-isLoading$ | async
+<div>Loading value: {{isLoading$ | async}}</div>
+
 <app-custom-app-bar>
-    @if(isLoading$ | async ;as loading && loFading===true) {}
+    @if (isLoading$ | async) {}
     @else {
     @if (error$ | async ; as error) { }
     @else{
@@ -12,8 +13,8 @@ isLoading$ | async
     }
 </app-custom-app-bar>
 
-@if(isLoading$ | async ;as loading && loFading===true) {
-<div class="loading-indicator">
+@if (isLoading$ | async) {
+    <div class="loading-indicator">
     <mat-spinner></mat-spinner>
 </div>
 }

@@ -32,9 +32,14 @@ export class GaragesScreenComponent {
     this.isLoading$ = this._store.select(selectGaragesLoading);
     this.error$ = this._store.select(selectGaragesError);
     this.garages$ = this._store.select(selectAllGarages);
+    this.isLoading$.subscribe(loading => {
+      console.log('Loading state changed:', loading);
+    });
   }
 
   ngOnInit() {
+    console.log('Component initialized - dispatching loadGarages');
     this._store.dispatch(loadGarages());
   }
+
 }

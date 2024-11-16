@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { GarageCacheService } from '../../../services/garage-chache/garage-cache.service';
 import { addGarages } from '../../../store/actions';
+import { CustomButtonComponent } from '../../../core/custom-button/custom-button.component';
 
 @Component({
   selector: 'app-send-garages',
   standalone: true,
-  imports: [],
+  imports: [CustomButtonComponent],
   templateUrl: './send-garages.component.html',
   styleUrl: './send-garages.component.css'
 })

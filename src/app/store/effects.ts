@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, delay, map, mergeMap, of } from 'rxjs';
+import { catchError, map, mergeMap, of } from 'rxjs';
 import { GarageService } from '../services/garage-service/garage.service';
 import { addGarages, addGaragesFailure, addGaragesSuccess, loadGarages, loadGaragesFailure, loadGaragesSuccess } from "./actions";
 import { deleteGarage, deleteGarageSuccess, deleteGarageFailure } from './actions';
@@ -18,7 +18,7 @@ export class GarageEffects {
   */
   loadGarages$ = createEffect(() =>
     this._actions$.pipe(
-      ofType(loadGarages),
+      ofType(loadGarages),      
       mergeMap(() =>
         this._garageService.getGarages().pipe(
           // On success, dispatch the 'loadGaragesSuccess' action with the fetched garages.
@@ -53,12 +53,12 @@ export class GarageEffects {
   * Effect that handles adding garages.
   * Listens for the 'addGarages' action, triggers a service call to add garages, 
   * and dispatches a success or failure action based on the response.
-  * 
+  * \
   * @throws Throws an error if the data returned is invalid or no new garages were added.
   */
   addGarages$ = createEffect(() =>
     this._actions$.pipe(
-      ofType(addGarages),
+      ofType(addGarages),     
       mergeMap(({ garages }) =>
         this._garageService.createGarages(garages).pipe(
           map((newGarages) => {
