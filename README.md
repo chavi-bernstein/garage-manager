@@ -1,5 +1,5 @@
 ## Garage Manager Client
-This is a garage management client project built with Angular. The system allows basic management of garage data, including viewing, adding, and deleting garages. It is designed to work with the Garage Manager Server backend, so ensure the server is running to retrieve and manage data.
+This is a garage management client project built with Angular. The system allows basic management of garage data, including viewing, adding, and deleting garages. It is designed to work with the https://github.com/chavi-bernstein/garage-manager-server backend, so ensure the server is running to retrieve and manage data.
 
 ## Main Features
 View Garages: Displays a list of all garages in the system.
@@ -26,7 +26,7 @@ git clone https://github.com/chavi-bernstein/garage-manager.git
 cd garage-manager
 
 Set up the Environment
-Make sure the backend server is running. Follow the setup instructions in the Garage Manager Server repository to start the server.
+Make sure the backend server is running. Follow the setup instructions in the https://github.com/chavi-bernstein/garage-manager-server repository to start the server.
 
 Install Dependencies
 npm install
