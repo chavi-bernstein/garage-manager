@@ -18,7 +18,7 @@ export class CustomHttpInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError((error: unknown) => {
         let errorMessage = 'Unknown error occurred';
-        
+
         // Handles TimeoutError explicitly if the request exceeds the time limit.
         if (error instanceof TimeoutError) {
           errorMessage = 'Request timed out';
@@ -28,7 +28,7 @@ export class CustomHttpInterceptor implements HttpInterceptor {
           // If the error status is 0, it likely means that the server is unreachable.
           if (error.status === 0) {
             errorMessage = 'Unable to connect to the server. Please check if the server is running and accessible.';
-            
+
             // Additional handling for fetch failures, checking if the connection was explicitly refused.
             if (error.error instanceof TypeError && error.error?.message === 'fetch failed') {
               const cause = (error.error as any).cause;

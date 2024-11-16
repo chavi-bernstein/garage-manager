@@ -1,13 +1,24 @@
-.gradient-button {
-    background: linear-gradient(45deg, #2196F3, #9C27B0);
-    color: white !important;
-    font-weight: bold;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    transition: background 0.3s ease;
-  }
-  
-  .gradient-button:hover {
-    background: linear-gradient(45deg, #1976D2, #7B1FA2);
-  }
+.button {
+  background: linear-gradient(45deg, #2196F3, #9C27B0);
+  color: white !important;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: linear-gradient(45deg, #1976D2, #7B1FA2);
+}
+
+
+.gradient-background {
+  background: linear-gradient(45deg, #2196F3, #9C27B0);
+  color: white !important;
+}
+
+.solid-background {
+  color: #2196F3 !important;
+  background: white !important;
+}

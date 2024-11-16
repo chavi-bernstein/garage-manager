@@ -33,4 +33,8 @@ mat-label {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1%;
     padding: 16px 0;
-  }
+}
+
+mat-error {
+    color: red;
+}

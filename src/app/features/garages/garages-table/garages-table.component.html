@@ -10,5 +10,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
-  <mat-paginator [pageSizeOptions]="[itemsPerPage]"></mat-paginator>
+  @if(dataSource?.data &&dataSource!.data!.length > itemsPerPage){ <mat-paginator
+    [pageSizeOptions]="[itemsPerPage]"></mat-paginator>
+  }
 </div>

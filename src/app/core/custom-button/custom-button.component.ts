@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
 
 /**
  * CustomButtonComponent
@@ -18,7 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-custom-button',
   standalone: true,
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, CommonModule],
   templateUrl: './custom-button.component.html',
   styleUrls: ['./custom-button.component.css']
 })
@@ -31,6 +32,9 @@ export class CustomButtonComponent {
 
   /** Event emitted when the button is clicked */
   @Output() onTap = new EventEmitter<void>();
+
+  /** Should the button will be gradient */
+  @Input() gradient: boolean = true;
 
   /**
    * Handles the button click event and emits the onTap event.

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { GarageCacheService } from '../../services/garage-chache/garage-cache.service';
-import { addGarages } from '../../store/actions';
+import { GarageCacheService } from '../../../services/garage-chache/garage-cache.service';
+import { addGarages } from '../../../store/actions';
 
 @Component({
   selector: 'app-send-garages',

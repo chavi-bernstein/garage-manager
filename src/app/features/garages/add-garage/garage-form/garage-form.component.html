@@ -15,8 +15,8 @@
 
         <div class="dialog-buttons">
             <app-custom-button [text]="cancel" (onTap)="onCancel()"></app-custom-button>
-            <app-custom-button [disabled]="!garageForm.valid" [text]="send"  (onTap)="onSubmit()"></app-custom-button>
-            <app-custom-button [disabled]="!garageForm.valid" [text]="save"  (onTap)="onSave()"></app-custom-button>
+            <app-custom-button [disabled]="!garageForm.valid" [text]="send" (onTap)="onSubmit()"></app-custom-button>
+            <app-custom-button [disabled]="!garageForm.valid" [text]="save" (onTap)="onSave()"></app-custom-button>
         </div>
     </form>
 </mat-dialog-content>

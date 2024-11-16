@@ -16,7 +16,7 @@ export class GarageService {
   ) { }
 
   getGarages(): Observable<Garage[]> {
-    return this._networkService.get<Garage[]>('garages', { 'limit': 50 });
+    return this._networkService.get<Garage[]>('garages', { 'limit': 5 });
   }
 
   deleteGarage(id: number): Observable<any> {
@@ -32,12 +32,12 @@ export class GarageService {
         const newGarages = garages.filter(
           garage => !existingGarages.some(existingGarage => existingGarage.id == garage.id)
         );
-  
-        
+
+
         if (newGarages.length > 0) {
           const garagesJson = newGarages.map(garage => new GarageModel(garage).toJson());
-          console.log  ("garagesJson")
-          console.log  (garagesJson)
+          console.log("garagesJson")
+          console.log(garagesJson)
 
           return this._networkService.post('garages', garagesJson);
         } else {

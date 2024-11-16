@@ -1,12 +1,11 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { Garage } from '../../models/garage';
+import { Garage } from '../../../models/garage';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { AppState } from '../../store/store';
-import { loadGarages } from '../../store/actions';
-import { selectAllGarages } from '../../store/selectors';
+import { AppState } from '../../../store/store';
+import { selectAllGarages } from '../../../store/selectors';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -18,9 +17,9 @@ import { CommonModule } from '@angular/common';
 })
 
 export class GaragesTableComponent implements AfterViewInit, OnInit {
-  displayedColumns: string[] = []; 
+  displayedColumns: string[] = [];
 
-  columnHeaders: Record<string, string> = { 
+  columnHeaders: Record<string, string> = {
     id: 'מזהה',
     number: 'מספר מוסך',
     name: 'שם מוסך',
@@ -43,7 +42,7 @@ export class GaragesTableComponent implements AfterViewInit, OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private _store: Store<AppState>) {}
+  constructor(private _store: Store<AppState>) { }
 
   ngOnInit() {
     this.displayedColumns = Object.keys(this.columnHeaders);

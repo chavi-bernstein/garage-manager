@@ -1,3 +1,4 @@
-<button mat-raised-button [disabled]="disabled" (click)="handleButtonClick()" class="gradient-button">
+<button [ngClass]="gradient ? 'gradient-background' : 'solid-background'" mat-raised-button [disabled]="disabled"
+  (click)="handleButtonClick()" class="button">
   {{ text }}
 </button>

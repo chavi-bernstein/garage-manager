@@ -4,5 +4,5 @@ import { CustomHttpInterceptor } from './custom-http-interceptor.interceptor';
 
 /** Provider for the Custom Interceptor. */
 export const customInterceptorProvider: Provider =
-{ provide: HTTP_INTERCEPTORS, useClass: CustomHttpInterceptor, multi: true }
-;
+    { provide: HTTP_INTERCEPTORS, useClass: CustomHttpInterceptor, multi: true }
+    ;

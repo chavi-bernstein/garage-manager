@@ -9,6 +9,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   styleUrl: './custom-app-bar.component.css'
 })
 
+/**
+ * CustomAppBarComponent
+ * 
+ * This component displays a customizable application bar with a title.
+ * It is a standalone component that uses Angular Material's Toolbar.
+ * 
+ * Usage:
+ * ```html
+ * <app-custom-app-bar></app-custom-app-bar>
+ * ```
+ */
 export class CustomAppBarComponent {
   title: string = "מוסכים";
 }

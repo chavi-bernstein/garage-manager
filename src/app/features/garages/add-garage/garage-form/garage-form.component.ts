@@ -6,12 +6,12 @@ import { MatLabel } from '@angular/material/form-field';
 import { MatError } from '@angular/material/form-field';
 import { MatDialogContent } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CustomButtonComponent } from '../../../core/custom-button/custom-button.component';
-import { CustomAppBarComponent } from "../../../core/custom-app-bar/custom-app-bar.component";
+import { CustomButtonComponent } from '../../../../core/custom-button/custom-button.component';
+import { CustomAppBarComponent } from "../../../../core/custom-app-bar/custom-app-bar.component";
 import { Store } from '@ngrx/store';
-import { addGarages } from '../../../store/actions';
-import { Garage } from '../../../models/garage';
-import { GarageCacheService } from '../../../services/garage-chache/garage-cache.service';
+import { addGarages } from '../../../../store/actions';
+import { Garage } from '../../../../models/garage';
+import { GarageCacheService } from '../../../../services/garage-chache/garage-cache.service';
 
 @Component({
   selector: 'app-garage-form',
@@ -29,7 +29,7 @@ export class GarageFormComponent {
   send: string = "שליחה";
   save: string = "שמור";
   addNewGarage: string = "הוסף מוסך חדש";
-  isProcessing  = false;
+  isProcessing = false;
 
   constructor(
     public dialogRef: MatDialogRef<GarageFormComponent>,

@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Store } from '@ngrx/store';
-import { deleteGarage } from '../../../store/actions';
-import { Garage } from '../../../models/garage';
+import { deleteGarage } from '../../../../store/actions';
+import { Garage } from '../../../../models/garage';
 
 @Component({
   selector: 'app-delete-garage',
